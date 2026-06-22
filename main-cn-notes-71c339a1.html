@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加拿大28 – 知识库入口 | 说明与导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f9f9fb;
+            color: #1f2a3e;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 (hero) */
+        .hero {
+            background: linear-gradient(145deg, #0b1424 0%, #1a2639 80%, #2a3448 100%);
+            padding: 4rem 2rem 3.2rem;
+            text-align: center;
+            color: #e6edf5;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: #f9f9fb;
+            clip-path: ellipse(60% 100% at 50% 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            font-weight: 350;
+            opacity: 0.85;
+            max-width: 640px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #2e4a7a;
+            color: #d0def0;
+            padding: 0.35rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+        }
+
+        /* 强调色 */
+        a, .accent {
+            color: #015c9e;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.15s;
+        }
+
+        a:hover {
+            color: #00396e;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.8rem;
+        }
+
+        /* 浅色正文区 卡片/目录布局 */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2.2rem 0 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: 0.2s;
+            border: 1px solid #eaeef4;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 28px rgba(1, 92, 158, 0.07);
+            border-color: #bdd1e8;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #13273f;
+            border-left: 4px solid #015c9e;
+            padding-left: 0.7rem;
+        }
+
+        .card p, .card li {
+            font-size: 0.96rem;
+            color: #33455e;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            padding: 0.3rem 0 0.3rem 1.2rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: '·';
+            color: #015c9e;
+            font-weight: 700;
+            position: absolute;
+            left: 0.1rem;
+        }
+
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.8rem;
+            margin: 2.2rem 0 1.8rem;
+            background: #f0f4fa;
+            padding: 1.2rem 1.8rem;
+            border-radius: 36px;
+            align-items: center;
+        }
+
+        .info-row span {
+            font-size: 0.92rem;
+            color: #1f3855;
+        }
+
+        .info-row .tag {
+            background: #d7e3f3;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-weight: 500;
+            color: #00447c;
+        }
+
+        .faq-preview {
+            margin: 2.6rem 0 3rem;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1rem 1.6rem;
+            margin-bottom: 0.8rem;
+            border: 1px solid #e3eaf2;
+        }
+
+        .faq-item strong {
+            display: block;
+            color: #112233;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item p {
+            font-size: 0.93rem;
+            color: #3f4f68;
+        }
+
+        .footer-note {
+            border-top: 1px solid #d5dfec;
+            margin: 2.8rem 0 1.5rem;
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: #5c6f89;
+        }
+
+        .footer-note a {
+            font-weight: 400;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero {
+                padding: 2.8rem 1rem 2.5rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-row {
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="badge">知识库 · 稳定入口</div>
+        <h1>加拿大28 · 说明与导航</h1>
+        <p class="sub">归类整理常用信息与访问路径，保持页面简洁、可靠，适合新用户快速熟悉环境。</p>
+    </header>
+
+    <main class="container">
+        <!-- 卡片目录区：四个信息模块 -->
+        <section class="section-grid">
+            <article class="card">
+                <h3>📌 平台定位</h3>
+                <p>面向对数字趋势感兴趣的群体，<a href="https://main-cn-ca28.com">加拿大28</a> 提供明确的规则说明与数据查询入口。内容聚焦于常见疑问、操作指引和版本说明，不包含投资建议或诱导行为。</p>
+            </article>
+            <article class="card">
+                <h3>📋 导航分类</h3>
+                <ul>
+                    <li>规则与术语 · 基础概念</li>
+                    <li>数据图表 · 历史记录</li>
+                    <li>常见问题 · 操作指引</li>
+                    <li>更新日志 · 版本备忘</li>
+                </ul>
+            </article>
+            <article class="card">
+                <h3>🔄 信息提示</h3>
+                <p>页面内容仅为归纳整理，不构成任何承诺或保障。建议定期查阅官方说明，以确保信息同步。任何变动以站内公告为准。</p>
+            </article>
+            <article class="card">
+                <h3>🔍 快速参考</h3>
+                <p>若需了解当前规则或数据格式，可直接通过 <a href="https://main-cn-ca28.com">加拿大28</a> 查阅。本页作为补充引导，帮助定位所需模块。</p>
+            </article>
+        </section>
+
+        <!-- 提示区 / 相关信息 -->
+        <div class="info-row">
+            <span class="tag">✦ 相关资源</span>
+            <span>使用指南 · 术语对照 · 图表说明 · 反馈通道</span>
+            <span style="margin-left: auto; opacity: 0.7;">内容版本 2025</span>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <section class="faq-preview">
+            <div class="faq-item">
+                <strong>❓ 如何找到规则说明？</strong>
+                <p>在 <a href="https://main-cn-ca28.com">加拿大28</a> 页面顶部导航栏选择「规则」即可查阅完整条款与示例。本知识库也收录了简化版对照。</p>
+            </div>
+            <div class="faq-item">
+                <strong>❓ 数据更新频率？</strong>
+                <p>页面数据按固定周期同步，具体时间戳显示在图表区域。如遇延迟可参考页面提示区的备用说明。</p>
+            </div>
+            <div class="faq-item">
+                <strong>❓ 是否提供历史趋势？</strong>
+                <p>是的，在「数据图表」部分可浏览近期的记录分布。所有数据仅供个人参考，不构成策略依据。</p>
+            </div>
+        </section>
+
+        <div class="footer-note">
+            <p>本页为知识库入口式说明页。如需直接访问核心内容，可前往 <a href="https://main-cn-ca28.com">加拿大28</a>。页面内容定期复核，保持简洁专业。</p>
+        </div>
+    </main>
+</body>
+</html>
